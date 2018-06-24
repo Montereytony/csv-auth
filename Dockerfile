@@ -16,5 +16,5 @@ RUN jupyterhub --generate-config  &&  mv jupyterhub_config.py .jupyter
 RUN echo "c.JupyterHub.authenticator_class = 'remotecsvauthenticator.RemoteCSVAuthenticator'" >>.jupyter/jupyterhub_config.py
 RUN echo "c.RemoteCSVAuthenticator.csv_url = 'https://docs.google.com/spreadsheets/d/1zlRECNZRfFB3mEfjebXcSrebTWXsIrWpOz9ibAiCOQw/edit?usp=sharing?gid=0&single=true&output=csv'" >>.jupyter/jupyterhub_config.py
 RUN echo "c.RemoteCSVAuthenticator.cache_seconds = 300" >>.jupyter/jupyterhub_config.py
-RUN jupyterhub -f .jupyter/jupyterhub_config.py
+#RUN jupyterhub -f .jupyter/jupyterhub_config.py
 USER jovyan
