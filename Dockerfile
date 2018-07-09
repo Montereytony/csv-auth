@@ -11,5 +11,7 @@
 FROM montereytony/ugba147:latest
 USER root
 RUN pip install --upgrade pip 
-RUN pip install jupyterhub-remotecsv-authenticator
+RUN git clone https://github.com/yuvipanda/jupyterhub-remotecsv-authenticator.git && \
+    cd jupyterhub-remotecsv-authenticator && \
+    python  setup.py install
 USER jovyan
